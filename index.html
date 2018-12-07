@@ -77,13 +77,19 @@
 			</div>
 			<div class="info-box">
 				<p class="info-text"><b>Programmeringssprog</b><br>C#, C, C++, Python, PHP, JavaScript, Lua, R, MySQL, Java, CSS, HTML og Bash</p><hr>
-				<p class="info-text"><b>Programmer/Frameworks</b><br>Unity 3D, SFML, SDL</p><hr>
+				<p class="info-text"><b>Programmer/Frameworks</b><br>Unity 3D, SFML, NodeJS, ExpressJS</p><hr>
 				<p class="info-text"><b>Operativsystemer</b><br>GNU/Linux (<a href="https://voidlinux.org">Void Linux</a>) til b&aelig;rbar og station&aelig;r, Windows 10/7 i VM</p><hr>
 				<p class="info-text"><b>Erfaring</b><br>Udvikling p&aring; VR-headsets (HTC Vive, Ocolous Rift/Go), Arduino, Raspberry Pi og ATMEGA CPU'er</p>
                         </div>
+		
+			<div class="info-container" id="projects">
+                        	<h1 id="code" style="color: #009BCF" class="title">Projekter</h1>
+                        </div>
+                        <div class="info-box" id="proj">
+			</div>
 
 			<div class="info-container">
-				<h1 id="projects" style="color: #00bcd4" class="title">Projekter</h1>
+				<h1 style="color: #00bcd4" class="title">Links</h1>
 			</div>
 			<div class="info-box">
 				<p class="info-text"><b>GitHub</b><br>Mine projekter kan findes p&aring; <a href="https://github.com/madstk1">GitHub</a>.</p><hr>
@@ -118,6 +124,34 @@
 				} else {
 					document.getElementById("gototop").style.left = "-100px";
 				}
+			}
+		</script>
+		<script>
+                	function get ( url ) {
+                		var req = new XMLHttpRequest();
+                		req.open( "GET", url, false );
+                		req.send( null );
+                		return req.responseText;
+                	}
+                
+                	var data = JSON.parse( get( "https://api.github.com/users/madstk1/repos" ) );
+                	var proj = document.getElementById("proj");
+			for(var i = 0; i < data.length; i++) {
+				var title = data[i]["name"];
+				var desc = data[i]["description"];
+				var link = data[i]["html_url"];
+                		var elm = document.createElement( "div" );
+
+				if(data[i]["fork"] == true) {
+					title += " (fork)";
+				}
+
+				elm.innerHTML = "<a style='color: black;' href='" + link + "'><p style='' class='info-text'><b>" + title + "</b><br>" + desc + "</p></a>";
+				if(i < data.length - 1) {
+					elm.innerHTML += "<hr>";
+				}
+
+				proj.appendChild( elm );
 			}
 		</script>
 	</body>
