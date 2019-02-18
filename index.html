@@ -1,158 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>Portfolie - Mads Trier</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Portfolio - Mads Trier Kristiansen</title>
 
-		<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script>
-			$(document).ready(function(){
-			$("a").on('click', function(event) {
-				if (this.hash !== "") {
-					event.preventDefault();
-					var hash = this.hash;
-					$('html, body').animate ( {
-						scrollTop: $(hash).offset().top
-					}, 800, function() {
-						window.location.hash = hash;
-					});
-				}
-			});
-		});
-		</script>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="stylesheet.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="header" id="top">
-			<div class="header-field">
-				<h1 class="header-name">Mads Trier Kristiansen</h1>
-				<h4 >Portfolie</h4>
-			</div>
-			<div class="tiles">
-				<a href="#about"><div class="tile red">
-					<img src="images/about.png" class="category-image"/>
-					<p class="category-text">Information</p>
-				</div></a>
-				<a href="#code"><div class="tile orange">
-					<img src="images/code.png" class="category-image"/>
-					<p class="category-text">IT-kompetencer</p>
-				</div></a>
-				<a href="#projects"><div class="tile cyan">
-					<img src="images/projects.png" class="category-image"/>
-					<p class="category-text">Projekter</p>
-				</div></a>
-				<a href="#contact"><div class="tile blue">
-					<img src="images/contact.png" class="category-image"/>
-					<p class="category-text">Kontakt</p>
-				</div></a>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<div class="bg bg-1">
+			<div class="title">
+				<div class="container title-info">
+					<h1>Mads Trier Kristiansen</h1>
+					<h3 class="subtitle">Selvlært Software Ingeniør</h3>
+				</div>
 			</div>
 		</div>
-		<div class="info-field">
-			<div class="info-container">
-				<h1 id="about" class="title">Om mig</h1>
-			</div>
-			<div class="info-box">
-				<p class="info-text"><b>Navn</b><br>Mads Trier Kristiansen</p><hr>
-				<p class="info-text"><b>Alder</b><br>18 &aring;r</p><hr>
-				<p class="info-text"><b>Resum&eacute;</b><br>
-				Amat&oslash;r software udvikler, med interesse i b&aring;de hardware og software.
-				Har lavet tidligere arbejde med VR-headsets og inlejret systemer, samt stiftet bekendtskab med low-level og Object-Oriented programmering.<br>
-				Ser frem til at f&aring; mere viden og erfaring i feltet.
-				</p><hr>
-				<p class="info-text"><b>Uddannelse</b><br></p><ul>
-					<li>Mercantec HTX (2016-2019)</li>
-					<li>Vestervang Skole (2006-2016)</li>
-				</ul><hr>
-				<p class="info-text"><b>Tidligere arbejdserfaring</b><br></p>
-				<ul>
-					<li>Frivillig til Game Expo Viborg (2017 - 2018)</li>
-					<li>Latiner Ly opvasker (2017)</li>
-					<li>Bilka ungarbejder (2016-2017)</li>
-					<li>FH Avisbud (2014-2016)</li>
-				</ul>
-                        </div>
 
-			<div class="info-container">
-				<h1 id="code" style="color: #ff9800" class="title">IT-kompetencer</h1>
-			</div>
-			<div class="info-box">
-				<p class="info-text"><b>Programmeringssprog</b><br>C#, C, C++, Python, PHP, JavaScript, Lua, R, MySQL, Java, CSS, HTML og Bash</p><hr>
-				<p class="info-text"><b>Programmer/Frameworks</b><br>Unity 3D, SFML, NodeJS, ExpressJS</p><hr>
-				<p class="info-text"><b>Operativsystemer</b><br>GNU/Linux (<a href="https://voidlinux.org">Void Linux</a>) til b&aelig;rbar og station&aelig;r, Windows 10/7 i VM</p><hr>
-				<p class="info-text"><b>Erfaring</b><br>Udvikling p&aring; VR-headsets (HTC Vive, Ocolous Rift/Go), Arduino, Raspberry Pi og ATMEGA CPU'er</p>
-                        </div>
-		
-			<div class="info-container" id="projects">
-                        	<h1 id="code" style="color: #009BCF" class="title">Projekter</h1>
-                        </div>
-                        <div class="info-box" id="proj">
-			</div>
+		<div class="bg bg-2">
+                	<div class="header header-black">
+                		<h2>Omkring mig</h2>
+                	</div>
+                	<div class="container header-content">
+				<div class="row">
+					<div class="col-sm-4">
+					<img src="img/pfp_small.jpg" class="img-circle pfp-small" alt="Mads Trier Kristiansen, 2018">
+					</div>
+					<div class="col-sm-8">
+						<p class="pfp-suppliment">
+							Amatør software udvikler, med interesse i både hardware og software. Har lavet tidligere arbejde med VR-headsets og indlejret systemer, samt stiftet bekendtskab med low-level og Object-Oriented programmering.<br><br>
+							Ser frem til at få mere viden og erfaring i feltet. 
+						</p>
 
-			<div class="info-container">
-				<h1 style="color: #00bcd4" class="title">Links</h1>
+						<div class="row social">
+							<div class="col-sm-4">
+								<a href="https://github.com/madstk1">GitHub</p></a>
+							</div>
+							<div class="col-sm-4">
+								<a href="https://www.linkedin.com/in/mads-trier-kristiansen/">LinkedIn</p></a>
+        						</div>
+							<div class="col-sm-4">
+								<a href="mailto:madstk1@gmail.com"><p alt="E-mail">E-mail</p></a>
+        						</div>
+						</div>
+					</div>
+				</div>
+                	</div>
+                </div>
+
+		<div class="bg bg-3">
+                	<div class="header header-white">
+                		<h2>IT-kompetencer</h2>
+                	</div>
+                	<div class="container header-content">
+                		<div class="row">
+					<div class="col-sm-4">
+						<div class="skill-container">
+							<h3 class="skill-title">Programmer</h3><hr>
+							<ul>
+								<li>Unity 3D</li>
+								<li>Visual Studio</li>
+								<li>Eclipse</li>
+								<li>Android Studio (i lære)</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-4">
+                                        	<div class="skill-container">
+                                        		<h3 class="skill-title">Programmering</h3><hr>
+							<ul>
+								<li>C/C++</li>
+								<li>C#</li>
+								<li>Java</li>
+								<li>Python 2/3</li>
+								<li>Javascript</li>
+								<li>HTML 5</li>
+								<li>CSS 3</li>
+								<li>PHP 7</li>
+								<li>Apache</li>
+								<li>Bash/Shell</li>
+								<li>MySQL</li>
+								<li>R</li>
+								<li>Lua</li>
+							</ul>
+
+							<h4 class="skill-subtitle">Frameworks</h4>
+							<ul>
+								<li>SFML</li>
+								<li>NodeJS</li>
+								<li>ExpressJS</li>
+							</ul>
+                                        	</div>
+                                        </div>
+					<div class="col-sm-4">
+                                        	<div class="skill-container">
+                                        		<h3 class="skill-title">Andet</h3><hr>
+							<ul>
+								<li>Linux (Gentoo, Arch og Void)</li>
+								<li>Raspberry Pi</li>
+								<li>Arduino</li>
+								<li>MacOS</li>
+								<li>Virtualisering</li>
+								<li>API'er</li>
+								<li>Low level programmering</li>
+								<li>OOP programmering</li>
+								<li>Udvikling til VR-headsets</li>
+							</ul>
+                                        	</div>
+                                        </div>
+                		</div>
+                	</div>
+                </div>
+
+		<div class="bg bg-4">
+                	<div class="header header-black">
+                		<h2>Projekter</h2>
+                	</div>
+                	<div class="container header-content">
+				<table class="table" style="margin-top: 11%;">
+					<thead>
+						<tr>
+							<th>Navn</th>
+							<th>Beskrivelse</th>
+							<th>Sprog</th>
+						</tr>
+					</thead>
+					<tbody id="proj_tbody">
+					</tbody>
+				</table>
+                	</div>
+               	</div>
+
+		<div class="bg bg-5">
+                	<div class="header header-white">
+                		<h2>Arbejdserfaring og Uddannelse</h2>
+                	</div>
+			<div class="container header-content">
+				<div class="panel panel-default">
+					<h4>Uddannelse</h4>
+					<table class="table">
+						<thead>
+							<th>Periode</th>
+							<th>Sted</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2016 - 2019</td>
+								<td>Mercantec HTX</td>
+							</tr>
+			
+							<tr>
+								<td>2006 - 2016</td>
+								<td>Vestervang Skole</td>
+							</tr>
+						</tbody>
+					<table>
+					
+					<h4 style="padding-top: 4%;">Arbejde</h4>
+					<table class="table">
+			                	<thead>
+			                		<th>Periode</th>
+			                		<th>Sted</th>
+			                	</thead>
+			                	<tbody>
+			                		<tr>
+			                			<td>2017 - 2018</td>
+			                			<td>Frivillig til Game Expo</td>
+			                		</tr>
+			                		<tr>
+			                			<td>2017</td>
+			                			<td>Latiner Ly opvasker</td>
+			                		</tr>
+							<tr>
+			                                	<td>2016 - 2017</td>
+			                                	<td>Bilka ungarbejder</td>
+			                                </tr>
+							<tr>
+			                                	<td>2014 - 2016</td>
+			                                	<td>FH Avisbud</td>
+			                                </tr>
+			                	</tbody>
+			                <table>
+				</div>
 			</div>
-			<div class="info-box">
-				<p class="info-text"><b>GitHub</b><br>Mine projekter kan findes p&aring; <a href="https://github.com/madstk1">GitHub</a>.</p><hr>
-				<p class="info-text"><b>Hjemmeside</b><br>Denne hjemmeside blev lavet fra bunden i HTML/CSS.</p>
-                        </div>
+                </div>
 
-			<div class="info-container">
-				<h1 id="contact" style="color: #2196ff" class="title">Kontakt</h1>
-			</div>
-			<div class="info-box">
-				<p class="info-text"><b>Navn</b><br>Mads Trier Kristiansen</p><hr>
-				<p class="info-text"><b>E-Mail</b><br>madstk1@gmail.com</p><hr>
-				<p class="info-text"><b>Mobil</b><br>+45 60714502</p><hr>
-				<p class="info-text"><b>Addresse</b><br>Vesterm&oslash;llevej 18, Viborg</p>
-                        </div>
-		</div>
-		<a href="#top" class="whitelink">
-		<div class="gototop" id="gototop">
-			<img src="images/top.png" class="topimage">
-		</div></a>
-		<script type="text/javascript">
-			var tiles = document.getElementsByClassName("tile");
-			for(var i = 0; i < tiles.length; i++) {
-				tiles[i].classList.add("tile-post");
-			}
-
-			window.onscroll = function() {scrollFunction()};
-
-			function scrollFunction() {
-				if (document.body.scrollTop > window.innerHeight / 2 || document.documentElement.scrollTop > window.innerHeight / 2) {
-					document.getElementById("gototop").style.left = "2%";
-				} else {
-					document.getElementById("gototop").style.left = "-100px";
-				}
-			}
-		</script>
 		<script>
-                	function get ( url ) {
-                		var req = new XMLHttpRequest();
-                		req.open( "GET", url, false );
-                		req.send( null );
-                		return req.responseText;
-                	}
-                
-                	var data = JSON.parse( get( "https://api.github.com/users/madstk1/repos" ) );
-                	var proj = document.getElementById("proj");
-			for(var i = 0; i < data.length; i++) {
+			var max_entries = 5;
+
+			function GetResponse( url ) {
+				var req = new XMLHttpRequest();
+				req.open( "GET", url, false );
+				req.send( null );
+				return req.responseText;
+			}
+
+			var data = JSON.parse( GetResponse( "https://api.github.com/users/madstk1/repos" ) );
+			var proj = document.getElementById("proj_tbody");
+
+			for(var i = 0; i < data.length; i++)
+			{
 				var title = data[i]["name"];
 				var desc = data[i]["description"];
+				var lang = data[i]["language"];
 				var link = data[i]["html_url"];
-                		var elm = document.createElement( "div" );
+				var elm = document.createElement("tr");
 
-				if(data[i]["fork"] == true) {
-					title += " (fork)";
+				if ( data[i]["fork"] ) {
+					desc += " <b>(fork)</b>"
 				}
 
-				elm.innerHTML = "<a style='color: black;' href='" + link + "'><p style='' class='info-text'><b>" + title + "</b><br>" + desc + "</p></a>";
-				if(i < data.length - 1) {
-					elm.innerHTML += "<hr>";
+				if( i < max_entries ) {
+					elm.innerHTML = "<tr><td><a href='" + link + "'>" + title + "</a></td><td>" + desc + "</td><td>" + lang + "</td></tr>";
+				} else {
+					elm.innerHTML = "<tr><td></td><td style='text-align: center;'><a style='text-decoration: none;' href='https://github.com/madstk1'><b>...</b></a></td><td></td></tr>"
 				}
 
 				proj.appendChild( elm );
 			}
 		</script>
+
+		<span class="arrow-down glyphicon glyphicon-chevron-down"></span>
 	</body>
 </html>
