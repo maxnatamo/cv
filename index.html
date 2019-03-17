@@ -74,7 +74,7 @@
 							<h3 class="skill-title">Programmer</h3><hr>
 							<ul>
 								<li>Unity 3D</li>
-								<li>Visual Studio</li>
+								<li>Visual Studio Code</li>
 								<li>Eclipse</li>
 								<li>Android Studio (i lære)</li>
 								<li>Sublime Text 3</li>
@@ -96,14 +96,13 @@
 								<li>Apache</li>
 								<li>Bash/Shell</li>
 								<li>MySQL</li>
-								<li>R</li>
 								<li>Lua</li>
 							</ul>
 
 							<h4 class="skill-subtitle">Frameworks</h4>
 							<ul>
 								<li>NodeJS</li>
-								<li>ExpressJS</li>
+								<li>.NET Core (i læring)</li>
 								<li>Bootstrap 3</li>
 								<li>X11/Xcb</li>
 								<li>SFML</li>
@@ -117,14 +116,11 @@
 								<li>Linux (Gentoo, Arch og Void)</li>
 								<li>Raspberry Pi</li>
 								<li>Arduino</li>
-								<li>ATMEGA CPU'er</li>
-								<li>MacOS</li>
+								<li>Udvikling til VR-headsets</li>
 								<li>Virtualisering</li>
 								<li>API'er</li>
-								<li>Low level programmering</li>
 								<li>OOP programmering</li>
-								<li>Udvikling til VR-headsets</li>
-								<li>Git/GitHub</li>
+								<li>Git</li>
 							</ul>
                                         	</div>
                                         </div>
@@ -224,25 +220,50 @@
 			var data = JSON.parse( GetResponse( "https://api.github.com/users/madstk1/repos" ) );
 			var proj = document.getElementById("proj_tbody");
 
+            var entries = [];
+
 			for(var i = 0; i < data.length; i++)
 			{
 				var title = data[i]["name"];
 				var desc = data[i]["description"];
 				var lang = data[i]["language"];
 				var link = data[i]["html_url"];
-				var elm = document.createElement("tr");
+				var update = data[i]["updated_at"].split("T")[0];
 
 				if ( data[i]["fork"] ) {
 					desc += " <b>(fork)</b>"
 				}
-
+				
+				entries.push( {
+				    title: title,
+				    desc:desc,
+				    lang:lang,
+				    link:link,
+				    update:update,
+				    elm:elm
+				} );
+			}
+			
+			entries.sort( function(a, b) {
+			    return Date.parse(b.update) - Date.parse( a.update );
+			} );
+			
+            for(var i = 0; i < entries.length; i++)
+            {
+                var entry = entries[i];
+				var elm = document.createElement("tr");
 				if( i < max_entries ) {
-					elm.innerHTML = "<tr><td><a href='" + link + "'>" + title + "</a></td><td>" + desc + "</td><td>" + lang + "</td></tr>";
+					elm.innerHTML = "<tr><td><a href='" + entry.link + "'>" + entry.title + "</a></td><td>" + entry.desc + "</td><td>" + entry.lang + "</td></tr>";
 				} else {
 					elm.innerHTML = "<tr><td></td><td style='text-align: center;'><a style='text-decoration: none;' href='https://github.com/madstk1'><b>...</b></a></td><td></td></tr>"
 				}
 
 				proj.appendChild( elm );
+				
+				if( i >= 5 ) {
+					break;
+				}
+				
 			}
 		</script>
 
